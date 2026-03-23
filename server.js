@@ -26,14 +26,15 @@ app.set('views', './views')
 
 console.log('Let op: Er zijn nog geen routes. Voeg hier dus eerst jouw GET en POST routes toe.')
 
-/*
+
 // Zie https://expressjs.com/en/5x/api.html#app.get.method over app.get()
-app.get(…, async function (request, response) {
+app.get('/', async function (request, response) {
+  const giftsResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products');
   
   // Zie https://expressjs.com/en/5x/api.html#res.render over response.render()
-  response.render(…)
+  const giftsJSON = await giftsResponse.json();
+  response.render('index.liquid', {gifts: giftsJSON.data})
 })
-*/
 
 /*
 // Zie https://expressjs.com/en/5x/api.html#app.post.method over app.post()
