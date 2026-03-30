@@ -1,1 +1,16 @@
-{% render 'head.liquid' %}
+{% render 'partials/head.liquid' %}
+    
+<section class="giftContainer">
+
+
+{% for gift in gifts %}
+    <article>
+        <img class="giftImage" src="{{gift.image}}">
+        <p class="giftName">{{gift.name}}</p>
+        <p class="giftAmount">€{{gift.amount}}</p>
+    </article>
+{% endfor %}
+
+</section>
+
+{% render 'partials/foot.liquid' %}
