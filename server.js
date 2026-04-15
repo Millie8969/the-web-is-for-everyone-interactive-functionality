@@ -38,7 +38,7 @@ app.get('/', async function (request, response) {
 
 /*
 // Zie https://expressjs.com/en/5x/api.html#app.post.method over app.post()
-app.post(…, async function (request, response) {
+app.post('/saveGift', async function (request, response) {
 
   // In request.body zitten alle formuliervelden die een `name` attribuut hebben in je HTML
   console.log(request.body)
