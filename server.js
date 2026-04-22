@@ -36,9 +36,13 @@ app.get('/', async function (request, response) {
   response.render('index.liquid', {gifts: giftsJSON.data})
 })
 
-/*
+
 // Zie https://expressjs.com/en/5x/api.html#app.post.method over app.post()
 app.post('/saveGift', async function (request, response) {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
   // In request.body zitten alle formuliervelden die een `name` attribuut hebben in je HTML
   console.log(request.body)
@@ -49,13 +53,17 @@ app.post('/saveGift', async function (request, response) {
   // Zie https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify over JSON.stringify()
   // Zie https://docs.directus.io/reference/items.html#create-an-item over het toevoegen van gegevens in Directus
   // Zie https://docs.directus.io/reference/items.html#update-an-item over het veranderen van gegevens in Directus
-  const fetchResponse = await fetch(…, {
-    method: …,
-    body: JSON.stringify(…),
-    headers: {
-      'Content-Type': 'application/json;charset=UTF-8'
-    }
-  })
+  const fetchResponse = await fetch("https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        milledoni_users_id: 59,
+        milledoni_products_id: request.body.giftId,
+      }),
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8'
+      }
+    });
 
   // Als de POST niet gelukt is, kun je de response loggen. Sowieso een goede debugging strategie.
   // console.log(fetchResponse)
@@ -66,9 +74,8 @@ app.post('/saveGift', async function (request, response) {
 
   // Redirect de gebruiker daarna naar een logische volgende stap
   // Zie https://expressjs.com/en/5x/api.html#res.redirect over response.redirect()
-  response.redirect(303, …)
+  response.redirect(303, '/')
 })
-*/
 
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
