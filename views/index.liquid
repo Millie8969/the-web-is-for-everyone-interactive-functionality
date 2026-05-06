@@ -5,7 +5,7 @@
 
 {% for gift in gifts %}
     <article>
-        <form method="post">
+        <form method="post" action="/saveGift">
             <label><input name="giftId" value="{{ gift.id }}" hidden></label>
             <button type="submit">SAVE</button>
         </form>

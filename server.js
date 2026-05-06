@@ -62,7 +62,7 @@ app.post('/saveGift', async function (request, response) {
     });
 
   // Als de POST niet gelukt is, kun je de response loggen. Sowieso een goede debugging strategie.
-  // console.log(fetchResponse)
+  console.log(fetchResponse)
 
   // Eventueel kun je de JSON van die response nog debuggen
   // const fetchResponseJSON = await fetchResponse.json()
